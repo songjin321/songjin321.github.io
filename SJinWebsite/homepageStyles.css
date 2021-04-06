@@ -1,0 +1,144 @@
+body{
+  background: #eee url(bg_overlay-2.png) repeat bottom left;
+  z-index: 0;
+  font-family: Helvetica,Arial,sans-serif;
+  font-weight: 400;
+  /*font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;*/
+  color: #555;
+  font-size: 10px;
+}
+
+#container{
+  max-width: 1200px;
+  margin:40px auto;
+	font-size:1.1em;
+}
+
+#main{
+	/* max-width:550px; */
+	background-color:#fff;
+	padding:2% 2% 2% 2%;
+	margin-bottom:20px;
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr;
+}
+
+#department{
+  font-size: 1.3em;
+  padding: 0% 5%;
+}
+
+#education{
+  font-size: 1.3em;
+  padding: 0% 5%;
+}
+
+#project{
+  /* max-width:550px; */
+	background-color:#fff;
+	padding:2% 2% 2% 2%;
+	margin-bottom:20px;
+}
+
+#otherProject{
+  /* max-width:550px; */
+	background-color:#fff;
+	padding:2% 2% 2% 2%;
+	margin-bottom:20px;
+}
+
+#pic > img{
+  max-width: 100%;
+}
+
+
+h1,h2{
+  color:indianred
+}
+
+#department p{
+  font-size: 1.1em;
+}
+
+p{
+  line-height: 1.5;
+}
+
+li{
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+.cover {
+  object-fit: cover;
+}
+
+.pimg{
+  width: 250px;
+  margin-left: 5px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.oneproject {
+  border-bottom: solid 20px #FFF;
+  /* border-bottom: solid 20px #FEE;*/
+  margin-bottom: 20px;
+  padding-left: 250px;
+  position: relative;
+}
+
+.pkeywords {
+	padding: 1px;
+	margin: 3px;
+  font-size: 1.0rem;
+}
+
+.ptitle {
+	padding: 1px;
+	margin: 3px;
+	font-weight: bold;
+  font-size: 1.2rem;
+  color: #00a0cc;
+}
+
+.goal
+{
+  line-height: 1.5;
+  margin-bottom: 10px;
+  color:#cc8f00
+}
+
+.method
+{
+  line-height: 1.5;
+}
+
+a{
+  font-size: 1.5em;
+}
+
+h2{
+  font-size: 2em;
+}
+
+#amphlink
+{
+  width: 250px;
+  margin-left: 40px;
+  margin-top: 135px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+#uavlink
+{
+  width: 250px;
+  margin-left: 80px;
+  margin-top: 135px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}

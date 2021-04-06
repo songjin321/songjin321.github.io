@@ -1,486 +1,163 @@
-<!--
-	作者：Sariay
-	时间：2018-08-26
-	描述：There may be a bug, but don't worry, Qiling(器灵) says that it can work normally! aha!
--->
-<!DOCTYPE html>
-<html class="html-loading">
-		
+<!doctype html>
+<html lang="en">
 
 <head>
-	<meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
-  <title>
-    
-      Hexo
-    
-  </title>
-  <meta name="author" content="John Doe">
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-	<!-- favicon -->
-  <link rel="shortcut icon" href="/img/favicon.ico">
+  <meta charset="utf-8">
+  <title>SJin's Homepage</title>
+  <link rel="stylesheet" href="SJinWebsite/homepageStyles.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="main">
+      <div id="pic">
+        <img src="./SJinWebsite/head.jpeg">
+      </div>
+      <div id="department">
+        <h1>Song Jin（宋瑾）</h1>
+        <p>
+          Hi, My name is Song Jin. Now I am an algorithm enginner of HIKVision in Han Zhou. Before that I get my
+          bachelor and master degree from Harbin Institute of Technology. My research interests are computer vision,
+          visual slam and 3D reconstruction.I believe that augmented reality will be the trend in the future, where cloud-based spatial maps are infrastructure, and I want to create the future and enjoy this process.
+        </p>
+      </div>
+
+      <div id="education">
+        <h2>Experience and Education</h2>
+        <ul>
+          <li>2013.9-2017.9, Harbin Institute of Technology, Bachelor. </li>
+          <li>2017.9-2020.1, Harbin Institute of Technology, Master. </li>
+          <li>2020.4-2021.2, HikVision Research Insititute, Algorithm Enginner. </li>
+        </ul>
+        <h2>Skills</h2>
+        <ul>
+          <li>Computer Vison, SLAM, 3D Vision, Sensor Fusion</li>
+          <li>Multiple View Geometry, Numeric Optimization</li>
+          <li>C/C++, Eigen, OpenCV, ROS</li>
+        </ul>
+      </div>
+    </div>
+    <div id="project">
+      <h2>Projects</h2>
+      <div class="oneproject">
+        <div class="pimg"><img src="./SJinWebsite/indoor.png" width="230px"></div>
+        <div class="ptitle">3D Reconstruction of Indoor Enviorment with iPhone DToF Lidar </div>
+        <div class="pkeywords">
+          <div class="goal">
+            （In progress）Reconstruct the indoor scene on the device with the onboard imu,   camera and the
+            low-resolution DToF liadr to achieve a globally consistent geometry and high-quallity texture.
+          </div>
+          <div class="method">
+            ​We use the onboard imu and camera to compose a visual-inertial slam to obtain the very accuracy 6DoF pose in real-time and imporve the DToF depth map quality by multiple view stereo method such as COLMAP, Finally all the high resolution depth map and global consistency pose graph was fused to the final mesh.
+          </div>
+        </div>
+      </div>
+      <div class="oneproject">
+        <div class="pimg"><img src="./SJinWebsite/self-calibration.png" width="230px"></div>
+        <div class="ptitle">Stereo Camera On-Chip Self-Calibration without Feature Extraction</div>
+        <div class="pkeywords">
+          <div class="goal">
+            The damage of the stereo camera extrinsic will cause the depth map quality decrease fast. In order to solve this problem stably, we create an algorithm could automatically perform self-calibration without extracting any feature point from the scene.
+          </div>
+          <div class="method">
+            The depth map density ratio and depth value error was used as the optimization criterion to loop refine rotation error in extrinsic parameters. After the recalibration, the average epipolar aligment error less then 0.5 pixel and the process time about 30s in Hisi3559 chip.
+          </div>
+        </div>
+
+      </div>
+      <div class="oneproject">
+        <div class="pimg"><img src="./SJinWebsite/amphiVIO.png" width="230px"> </div>
+        <div class="ptitle">
+          Autonomous Visual Localization Algorithm for Amphibious Robot in Filed Enviorment
+        </div>
+        <div id="amphlink">
+          <a href="https://github.com/hjwdzh/AdversarialTexture">Code</a>&nbsp
+          <a href="https://www.youtube.com/watch?v=52xlRn0ESek&amp;feature=youtu.be">Video</a>&nbsp
+          <a href="https://www.youtube.com/watch?v=52xlRn0ESek&amp;feature=youtu.be">PDF</a>&nbsp
+          <a href="https://www.youtube.com/watch?v=52xlRn0ESek&amp;feature=youtu.be">Slides</a>
+        </div>
+
+        <div class="pkeywords">
+            <div class="goal">
+            Amphibious robots moving in the field enviorment would be affected by changes of light, rugged terrain and violent movements. We try to implement a visual-inertial localization system for amphibious robot to solve all these problems.
+            </div>
+            <div class="method">
+              Use the information field and the robot movement direction to obtain the best viewing angle pointing to enough feature points in the scene. At the same time, the camera exposure is automatically adjusted to make the image contain enough information, and finally the more stable SIFT feature is used to resist the optical flow tracking failure caused by the movement.
+            </div>
+        </div>
+      </div>
+
+      <div class="oneproject">
+        <div class="pimg"><img src="./SJinWebsite/uav.png" width="230px"> </div>
+        <div class="ptitle"> Autonomous State Estimation and Mapping in Unknown Environments with Onboard Stereo Camera for MAVs</div>
+        <div id="uavlink">
+          <a href="https://github.com/hjwdzh/AdversarialTexture">Code</a>&nbsp;
+          <a href="https://www.youtube.com/watch?v=52xlRn0ESek&amp;feature=youtu.be">PDF</a>
+        </div>
+        <div class="pkeywords">
+            <div class="goal">
+            We create an onboard vision-based autonomous state estimation and mapping systems for MAVs’ navigation in unknown environments.
+            </div>
+            <div class="method">
+              The state estimator is developed to provide MAV’s current pose on the basis of the extended Kalman Filter by using image patch features. Inverse depth convergence monitoring and local bundle adjustment are utilized to improve the accuracy. The mapping algorithm for navigation is developed according to a real-time stereo matching method for 3D perception.
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="project">
+      <h2>Other Projects</h2>
+      <div class="oneproject">
+        <div class="pimg"> <img src="./SJinWebsite/games101.jpg" width="150px"> </div>
+        <div class="ptitle">Games101: Introduction for Computer Graphics</div>
+        <div class="pkeywords">
+          <div class="goal">
+          Song Jin
+          </div>
+          <div class="method">
+            Learned some basic concepts of graphics, including the implementation of rasterization rendering pipeline and ray tracing rendering pipeline
+          </div>
+      </div>
+      </div>
+      <div class="oneproject">
+        <div class="pimg"> <img src="./SJinWebsite/volume_measure.png" width="200px"> </div>
+        <div class="ptitle">2019 Alibaba CaiNiao Global Technology Challenge in Intelligent Volume Measurement</div>
+        <div class="pkeywords">
+          <div class="goal">
+          Song Jin, Sun JiaBi, Zhu FenFang
+          </div>
+          <div class="method">
+            Use the Structe-from-motion method to obtain the sparse point cloud of the measured object, and then use the calibration board to align the point cloud to the ground to measure the volume of the object.
+          </div>
+        </div>
+      </div>
+      <div class="oneproject">
+        <div class="pimg"> <img src="./SJinWebsite/jd.png" width="200px"> </div>
+        <div class="ptitle">2018 JDD Global Digitalization Challenge in Multi-Sensor Fusion For Autonomous Driving</div>
+        <div class="pkeywords">
+          <div class="goal">
+          Song Jin, Sun JiaBi, Wang Xin
+          </div>
+          <div class="method">
+            We try to fuse multi-sensor information such as lidar, GPS, odometer and IMU to implement an global localization framwork for autonomous driving.
+          </div>
+        </div>
+      </div>
+      <div class="oneproject">
+        <div class="pimg"> <img src="./SJinWebsite/vr-uav.png" width="200px"> </div>
+        <div class="ptitle">Aerial Grasping Based on VR Perception and Haptic Control</div>
+        <div class="pkeywords">
+          <div class="goal">
+          Song Jin, Wu YaQi, Sun JiaBi, Zhu Fenfang
+          </div>
+          <div class="method">
+            This work implements a aerial grasping task by using a hexrotor with a 3-DoF light-weight manipulator. A VR operating platform consisting of a UAV ground station and an aerial vehicle is build, and kinematic modeling and mapping algorithm
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
 
-  <!-- css -->
-  
-<link rel="stylesheet" href="/css/Annie.css">
-
-  
-  <!-- jquery -->
-	
-<script src="/plugin/jquery/jquery.min.js"></script>
-
-
-<script>
-    const CONFIG_BGIMAGE = {
-      mode: 'normal',
-      normalSrc: 'https://source.unsplash.com/collection/954550/1920x1080',
-      randomYouMax: 110,
-      randomYouSrc: 'https://sariay.github.io/Random-img/',
-	  randomOtherSrc: 'https://api.berryapi.net/?service=App.Bing.Images&day=-0',
-	  preloaderEnable: true
-    }
-	
-    const CONFIG_LEACLOUD_COUNT = {
-      enable: false,
-	  appId: 'AU8...',
-	  appKey: '4cU...',
-	  serverURLs: 'http' || ' '
-    }
-  </script>
-<meta name="generator" content="Hexo 4.2.1"></head>
-	<body>
-		<!-- Preloader -->
-
-	<div id="preloader">
-		<div class="pre-container">
-			
-				<div class="spinner">
-					<div class="double-bounce1"></div>
-					<div class="double-bounce2"></div>
-				</div>
-						
-		</div>
-	</div>
-
-
-<!-- header -->
-<header class="fixbackground bg-pan-br">
-	<div class="mask">
-		<!-- motto -->
-		<div class="h-body">	
-			
-				<div class="motto text-shadow-pop-left">
-					<p class="content" id="motto-content">Fetching...</p>
-					<p>-<p>
-					<p class="author" id="motto-author">Just a minute...</p>
-				</div>
-			
-		</div>
-		
-		<!-- others: such as time... -->			
-		<div class="h-footer">
-			<a href="javascript:;" id="read-more" class="scroll-down">
-				<span class="icon-anchor1 animation-scroll-down"></span>
-			</a>
-		</div>
-	</div>
-</header>
-
-<div id="navigation-hide">
-	<!-- Progress bar -->
-	<div id="progress-bar"></div>
-
-	<!-- Progress percent -->
-	<div id="progress-percentage"><span>0.0%</span></div>
-
-	<div class="toc-switch"><span class="switch-button">Catalog</span></div>
-
-	<!-- Page title -->
-	<p>
-		
-			Home
-		
-	</p>
-
-	
-	
-
-	<!-- Nav trigger for navigation-H-->
-	<a class="nav-trigger"><span></span></a>
-</div>
-
-<!-- Navigation in div(id="navigation-H") -->
-<nav class="nav-container" id="cd-nav">
-	<div class="nav-header">
-		<span class="logo"> 
-			<img src="/img/logo.png">
-		</span>
-		<a href="javascript:;" class="nav-close"></a>
-	</div>
-	
-	<div class="nav-body">
-		<ul id="global-nav">
-	
-		<li class="menu-home">
-			<a href="/" class="menu-item-home" target="_blank">Home</a>
-		</li>
-		
-	
-		<li class="menu-archive">
-			<a href="/archives" class="menu-item-archive" target="_blank">Archive</a>
-		</li>
-		
-	
-		<li class="menu-categories">
-			<a href="/categories" class="menu-item-categories" target="_blank">Category</a>
-		</li>
-		
-	
-		<li class="menu-tags">
-			<a href="/tags" class="menu-item-tags" target="_blank">Tag</a>
-		</li>
-		
-	
-		<li class="menu-about">
-			<a href="/about" class="menu-item-about" target="_blank">About</a>
-		</li>
-		
-	
-		<li class="menu-gallery">
-			<a href="/gallery" class="menu-item-gallery" target="_blank">Gallery</a>
-		</li>
-		
-	
-
-	
-</ul>
-	</div>
-	
-	<div class="nav-footer">
-		<ul id="global-social">
-	
-		<li>
-			<a href="http://github.com/" target="_blank">
-				<span class="icon-one"><span class="path1"></span><span class="path2"></span></span>
-			</a>
-		</li>
-	
-		<li>
-			<a href="http://github.com/" target="_blank">
-				<span class="icon-zhihu"></span>
-			</a>
-		</li>
-	
-		<li>
-			<a href="http://github.com/" target="_blank">
-				<span class="icon-github"></span>
-			</a>
-		</li>
-	
-		<li>
-			<a href="http://github.com/" target="_blank">
-				<span class="icon-sina-weibo "></span>
-			</a>
-		</li>
-	
-		<li>
-			<a href="http://github.com/" target="_blank">
-				<span class="icon-pinterest2"></span>
-			</a>
-		</li>
-	
-		<li>
-			<a href="http://github.com/" target="_blank">
-				<span class="icon-instagram"></span>
-			</a>
-		</li>
-	
-		<li>
-			<a href="http://github.com/" target="_blank">
-				<span class="icon-twitter"></span>
-			</a>
-		</li>
-	
-		<li>
-			<a href="/atom.xml" target="_blank">
-				<span class="icon-rss"></span>
-			</a>
-		</li>
-			
-</ul>
-
-	</div>
-</nav>
-			
-		<!--main-->
-		<main>
-			
-
-
-
-	<!--cart style-->
-	<div class="layout-cart">
-	<div id="layout-cart">
-		
-			<div class="post" id="post">
-				<a class="post-cover" href="/2020/06/24/%E6%AD%BB%E4%BA%A1%E8%AF%97%E7%A4%BE/" title=" 死亡诗社 " target="_blank">
-					
-					<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg"/>
-				</a>
-
-				<div class="post-text">
-					<p class="post-time">
-						六月 24日, 2020
-					</p>	
-					<h3 class="post-title" id="post-title-index">
-						<a href="/2020/06/24/%E6%AD%BB%E4%BA%A1%E8%AF%97%E7%A4%BE/" title="死亡诗社">							
-							
-	<a href="/2020/06/24/%E6%AD%BB%E4%BA%A1%E8%AF%97%E7%A4%BE/" itemprop="url">
-		死亡诗社
-	</a>
-
-						</a>
-					</h3>
-					<p class="post-content">
-						
-							看电影《死亡诗社》有感看这个电影的主要原因是之前忍不住要看斗罗，买了一个月的腾讯视频会员（哎，斗罗上半部分也算是完结了，三哥要独自一人开始成长了）。其次是...
-						
-					</p>
-					<p class="post-meta">
-						
-
-
-
-					</p>
-				</div>
-			</div>
-		
-			<div class="post" id="post">
-				<a class="post-cover" href="/2020/06/22/buy-camera/" title=" 买了相机 " target="_blank">
-					
-					<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg"/>
-				</a>
-
-				<div class="post-text">
-					<p class="post-time">
-						六月 22日, 2020
-					</p>	
-					<h3 class="post-title" id="post-title-index">
-						<a href="/2020/06/22/buy-camera/" title="买了相机">							
-							
-	<a href="/2020/06/22/buy-camera/" itemprop="url">
-		买了相机
-	</a>
-
-						</a>
-					</h3>
-					<p class="post-content">
-						
-							看我极其酷炫的新相机来对比下手机和相机拍的夜景，先是手机拍的接下来是相机拍的，见证奇迹的时刻在电脑4K屏幕上看的差距很明显。特别是对光源的解析力，如路灯在...
-						
-					</p>
-					<p class="post-meta">
-						
-
-
-
-					</p>
-				</div>
-			</div>
-		
-			<div class="post" id="post">
-				<a class="post-cover" href="/2020/06/19/test/" title=" 终于可以改微信号了！ " target="_blank">
-					
-					<img class="lazy" src="/img/lazy.gif" data-src="/img/cart_cover.jpg"/>
-				</a>
-
-				<div class="post-text">
-					<p class="post-time">
-						六月 19日, 2020
-					</p>	
-					<h3 class="post-title" id="post-title-index">
-						<a href="/2020/06/19/test/" title="终于可以改微信号了！">							
-							
-	<a href="/2020/06/19/test/" itemprop="url">
-		终于可以改微信号了！
-	</a>
-
-						</a>
-					</h3>
-					<p class="post-content">
-						
-							我的微信号终于可以改了，改成个人网站网址或许是个不错的想法！
-
-						
-					</p>
-					<p class="post-meta">
-						
-
-
-
-					</p>
-				</div>
-			</div>
-		
-	</div>
-	
-	
-	<div id="pagination">
-		
-	</div>
-
-	
-
-</div>
-	
-
-		</main>
-
-		<!--footer-->
-		<footer>
-	<div id="navigation-show">
-		<ul id="global-nav">
-	
-		<li class="menu-home">
-			<a href="/" class="menu-item-home" target="_blank">Home</a>
-		</li>
-		
-	
-		<li class="menu-archive">
-			<a href="/archives" class="menu-item-archive" target="_blank">Archive</a>
-		</li>
-		
-	
-		<li class="menu-categories">
-			<a href="/categories" class="menu-item-categories" target="_blank">Category</a>
-		</li>
-		
-	
-		<li class="menu-tags">
-			<a href="/tags" class="menu-item-tags" target="_blank">Tag</a>
-		</li>
-		
-	
-		<li class="menu-about">
-			<a href="/about" class="menu-item-about" target="_blank">About</a>
-		</li>
-		
-	
-		<li class="menu-gallery">
-			<a href="/gallery" class="menu-item-gallery" target="_blank">Gallery</a>
-		</li>
-		
-	
-
-	
-</ul>
-	</div>
-
-	<div class="copyright">
-		<p>
-			 
-				&copy;2017 - 2020, content by Sariay. All Rights Reserved.
-			
-			
-				<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
-			
-		</p>
-		<p>
-			
-
-	<!-- busuanzi -->
-	<!-- busuanzi -->
-
-
-
-			<a href="javascript:zh_tran('s');" class="zh_click" id="zh_click_s">简体</a> 
-			<a href="javascript:zh_tran('t');" class="zh_click" id="zh_click_t">繁體</a>				
-		</p>
-	</div>		
-</footer>
-		
-	<!-- Local or hitokoto! -->
-
-	
-<script src="/plugin/motto/motto.js"></script>
-
-	
-	<script type="text/javascript">
-		(function motto(){
-			let mottoText = getMingYanContent().split('</br> - </br>'),
-			
-			mottoTextContent = mottoText[0]?mottoText[0]:'请刷新...',
-			
-			mottoTextFrom = mottoText[1]?mottoText[1]:'one/一个';
-			
-			mottoTextContent = mottoTextContent.trim().substring(0, 100);
-		
-			$("#motto-content").html( mottoTextContent);
-			$("#motto-author").html( mottoTextFrom  );
-		})();	
-	</script>	
-
-
-
-<!-- love effect -->
-
-
-<!-- back to top -->
-
-	<div id="totop">
-	<span class="icon-circle-up"></span>
-</div>
-
-
-
-<!-- site analysis -->
-
-
-	<!-- site-analysis -->
-	
-	
-	
-	
-	
- 
-
-<!-- leancloud -->
-
-
-	<!-- leancloud -->
-	<!--
-	时间：2018-11-27
-	描述：
-		文章访问量：visitors
-		文章喜欢量：likes	
-		文章排行榜：topNPost
-		其他得说明：
-			01-Cookie相关的函数 
-				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
-			02-visitors相关的函数 
-				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
-				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
-			03-topNPost相关的函数
-				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
-			04-likes相关的函数，
-				参考了01 & 02进行简单的设计与实现
--->
-
-
-	
-
-  
-
-
-
-<script src="/plugin/chinese/chinese.js"></script>
-<script src="/plugin/imagelazyloader/yall.min.js"></script>
-<script src="/plugin/imageloaded/imagesloaded.pkgd.min.js"></script>
-<script src="/plugin/nicescroll/jquery.nicescroll.js"></script>
-<script src="/plugin/resizediv/resizediv.js"></script>
-<script src="/js/main.js"></script>
-
-	</body>	
 </html>
