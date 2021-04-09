@@ -151,3 +151,8 @@ h2{
   left: 0;
   top: 0;
 }
+
+footer {
+  text-align: center;
+  padding: 3px;
+}
