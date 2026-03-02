@@ -1,171 +1,308 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
-  <title>SJin's Homepage</title>
-  <link rel="stylesheet" href="SJinWebsite/homepageStyles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Song Jin - Staff Algorithm Engineer</title>
+  <meta name="description" content="Song Jin's academic homepage. Staff Algorithm Engineer at Alibaba Group.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
-
 <body>
-  <div id="container">
-    <div id="main">
-      <div id="pic">
-        <img src="./SJinWebsite/head.jpeg">
-      </div>
-      <div id="department">
-        <h1>Song Jin（宋瑾）</h1>
-        <p>
-          Hi, My name is Song Jin. Now I am an algorithm enginner of HIKVision in Han Zhou. Before that I get my
-          bachelor and master degree from Harbin Institute of Technology. My research interests are computer vision,
-          visual slam and 3D reconstruction. I believe augmented reality will be the future, I want to create the future and enjoy this process.
+
+<!-- ===== NAV ===== -->
+<nav class="nav" id="nav">
+  <div class="container">
+    <a href="#about" class="nav-brand">Song Jin</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#news">News</a>
+      <a href="#publications">Publications</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#blog">Blog</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== ABOUT ===== -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <img src="assets/images/profile/head.jpeg" alt="Song Jin" class="profile-photo">
+      <div>
+        <h1 class="about-name">Song Jin <span class="about-name-cn">(宋瑾)</span></h1>
+        <p class="about-title">Staff Algorithm Engineer</p>
+        <p class="about-affiliation">Alibaba Group &mdash; 大淘宝技术</p>
+        <p class="about-bio">
+          I am a Staff Algorithm Engineer at Alibaba Group, where I lead the algorithm development for <a href="https://jiazuo.taobao.com/" target="_blank">Jiazuo</a>, Alibaba's cutting-edge AI platform for home decoration.
         </p>
-      </div>
-
-      <div id="education">
-        <h2>Experience and Education</h2>
-        <ul>
-          <li>2013.9-2017.9, Harbin Institute of Technology, Bachelor. </li>
-          <li>2017.9-2020.1, Harbin Institute of Technology, Master. </li>
-          <li>2020.4-2021.2, HikVision Research Insititute, Algorithm Enginner. </li>
-        </ul>
-        <h2>Skills</h2>
-        <ul>
-          <li>Computer Vison, SLAM, 3D Vision, Sensor Fusion</li>
-          <li>Multiple View Geometry, Numeric Optimization</li>
-          <li>C/C++, Eigen, OpenCV, ROS</li>
-        </ul>
-      </div>
-    </div>
-    <div id="project">
-      <h2>Projects</h2>
-      <div class="oneproject">
-        <div class="pimg"><img src="./SJinWebsite/indoor.png" width="230px"></div>
-        <div class="ptitle">3D Reconstruction of Indoor Enviorment with iPhone DToF Lidar </div>
-        <div class="pkeywords">
-          <div class="goal">
-            （In progress）Reconstruct the indoor scene on the device with the onboard imu,   camera and the
-            low-resolution DToF liadr to achieve a globally consistent geometry and high-quallity texture.
-          </div>
-          <div class="method">
-            ​We use the onboard imu and camera to compose a visual-inertial slam to obtain the very accuracy 6DoF pose in real-time and imporve the DToF depth map quality by multiple view stereo method such as COLMAP, Finally all the high resolution depth map and global consistency pose graph was fused to the final mesh.
-          </div>
-        </div>
-      </div>
-      <div class="oneproject">
-        <div class="pimg"><img src="./SJinWebsite/self-calibration.png" width="230px"></div>
-        <div class="ptitle">Stereo Camera On-Chip Self-Calibration without Feature Extraction</div>
-        <div class="pkeywords">
-          <div class="goal">
-            The damage of the stereo camera extrinsic will cause the depth map quality decrease fast. In order to solve this problem stably, we create an algorithm could automatically perform self-calibration without extracting any feature point from the scene.
-          </div>
-          <div class="method">
-            The depth map density ratio and depth value error was used as the optimization criterion to loop refine rotation error in extrinsic parameters. After the recalibration, the average epipolar aligment error less then 0.5 pixel and the process time about 30s in Hisi3559 chip.
-          </div>
-        </div>
-
-      </div>
-      <div class="oneproject">
-        <div class="pimg"><img src="./SJinWebsite/amphiVIO.png" width="230px"> </div>
-        <div class="ptitle">
-          Autonomous Visual Localization Algorithm for Amphibious Robot in Filed Enviorment
-        </div>
-        <div id="amphlink">
-          <a href="https://github.com/songjin321/amphibious_robot_ws">Code</a>&nbsp
-          <a href="https://www.youtube.com/watch?v=EgoUhyrRRiA">Video</a>&nbsp
-          <a href="./SJinWebsite/amphiRobot.pdf">PDF</a>
-        </div>
-
-        <div class="pkeywords">
-            <div class="goal">
-            Amphibious robots moving in the field enviorment would be affected by changes of light, rugged terrain and violent movements. We try to implement a visual-inertial localization system for amphibious robot to solve all these problems.
-            </div>
-            <div class="method">
-              Use the information field and the robot movement direction to obtain the best viewing angle pointing to enough feature points in the scene. At the same time, the camera exposure is automatically adjusted to make the image contain enough information, and finally the more stable SIFT feature is used to resist the optical flow tracking failure caused by the movement.
-            </div>
-        </div>
-      </div>
-
-      <div class="oneproject">
-        <div class="pimg"><img src="./SJinWebsite/uav.png" width="230px"> </div>
-        <div class="ptitle"> Autonomous State Estimation and Mapping in Unknown Environments with Onboard Stereo Camera for MAVs</div>
-        <div id="uavlink">
-          <a href="https://github.com/songjin321/uav_navigation">Code</a>&nbsp;
-          <a href="./SJinWebsite/mav.pdf">PDF</a>
-        </div>
-        <div class="pkeywords">
-            <div class="goal">
-            We create an onboard vision-based autonomous state estimation and mapping systems for MAVs’ navigation in unknown environments.
-            </div>
-            <div class="method">
-              The state estimator is developed to provide MAV’s current pose on the basis of the extended Kalman Filter by using image patch features. Inverse depth convergence monitoring and local bundle adjustment are utilized to improve the accuracy. The mapping algorithm for navigation is developed according to a real-time stereo matching method for 3D perception.
-            </div>
-        </div>
-      </div>
-    </div>
-
-    <div id="project">
-      <h2>Other Projects</h2>
-      <div class="oneproject">
-        <div class="pimg">
-          <div id="games_img">
-            <img src="./SJinWebsite/games101.jpg" width="150px"> 
-          </div>
-        </div>
-        <div class="ptitle">Games101: Introduction for Computer Graphics</div>
-        <div class="pkeywords">
-          <div class="goal">
-          Song Jin
-          </div>
-          <div class="method">
-            In this course,I learned some basic concepts of graphics, including the implementation of rasterization rendering pipeline and ray tracing rendering pipeline.
-          </div>
-      </div>
-      </div>
-      <div class="oneproject">
-        <div class="pimg"> <img src="./SJinWebsite/volume_measure.png" width="200px"> </div>
-        <div class="ptitle">2019 Alibaba CaiNiao Global Technology Challenge in Intelligent Volume Measurement</div>
-        <div class="pkeywords">
-          <div class="goal">
-          Song Jin, Sun JiaBi, Zhu FenFang
-          </div>
-          <div class="method">
-            we use the Structe-from-motion method to obtain the sparse point cloud of the measured object, and then use the calibration board to align the point cloud to the ground. Finally, the volume of the object is calculated by filtering the final point cloud.
-          </div>
-        </div>
-      </div>
-      <div class="oneproject">
-        <div class="pimg"> <img src="./SJinWebsite/jd.png" width="200px"> </div>
-        <div class="ptitle">2018 JDD Global Digitalization Challenge in Multi-Sensor Fusion For Autonomous Driving</div>
-        <div class="pkeywords">
-          <div class="goal">
-          Song Jin, Sun JiaBi, Wang Xin
-          </div>
-          <div class="method">
-            We try to fuse multi-sensor information such as lidar, GPS, odometer and IMU to implement an global localization framwork for autonomous driving.
-          </div>
-        </div>
-      </div>
-      <div class="oneproject">
-        <div class="pimg"> <img src="./SJinWebsite/vr-uav.png" width="200px"> </div>
-        <div class="ptitle">Aerial Grasping Based on VR Perception and Haptic Control</div>
-        <div class="pkeywords">
-          <div class="goal">
-          Song Jin, Wu YaQi, Sun JiaBi, Zhu Fenfang
-          </div>
-          <div class="method">
-            This work implements a aerial grasping task by using a hexrotor with a 3-DoF light-weight manipulator. A VR operating platform consisting of a UAV ground station and an aerial vehicle is build, and kinematic modeling and mapping algorithms related to the manipulater’s grabbing task is conducted.
-          </div>
+        <p class="about-bio">
+          My journey began with a strong foundation in <strong>SLAM</strong> and <strong>3D Vision</strong> during my B.S. and M.S. at Harbin Institute of Technology (HIT) and Hikvision Research Institute. With extensive expertise in <strong>Image Diffusion Models</strong>, my current research interests have evolved towards the frontier of <strong>Object-centric 3D Generation</strong> and <strong>Physics-driven World Models</strong>. I am passionate about bridging the gap between generative AI and physical laws to create intelligent systems that can perceive and simulate the 3D world with high fidelity.
+        </p>
+        <div class="social-links">
+          <a href="mailto:sjinfeixue@gmail.com" title="Email">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4l-10 8L2 4"/></svg>
+            Email
+          </a>
+          <a href="https://scholar.google.com/citations?hl=zh-CN&user=E1_lN_4AAAAJ" target="_blank" title="Google Scholar">
+            <i class="ai ai-google-scholar"></i>
+            Scholar
+          </a>
         </div>
       </div>
     </div>
   </div>
+</section>
 
+<!-- ===== NEWS ===== -->
+<section id="news">
+  <div class="container">
+    <h2 class="section-title">News</h2>
+    <div class="news-list">
+      <div class="news-item">
+        <span class="news-date">2025.12</span>
+        <span class="news-text">Started research on 3D component-wise generation.</span>
+      </div>
+      <div class="news-item">
+        <span class="news-date">2025.11</span>
+        <span class="news-text">Two preprints released: <em>SkeleGuide</em> (skeleton-guided human image synthesis) and <em>SA-IQA</em> (spatial aesthetics image quality assessment).</span>
+      </div>
+      <div class="news-item">
+        <span class="news-date">2024</span>
+        <span class="news-text">Promoted to Staff Algorithm Engineer at Alibaba Group.</span>
+      </div>
+      <div class="news-item">
+        <span class="news-date">2024</span>
+        <span class="news-text">Paper <em>HomeDiffusion</em> accepted at <strong>AAAI 2024</strong>.</span>
+      </div>
+      <div class="news-item">
+        <span class="news-date">2023.3</span>
+        <span class="news-text">Leading algorithm development for <a href="https://jiazuo.taobao.com/" target="_blank">jiazuo.taobao.com</a>, Alibaba's AI home decoration image generation platform.</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-</body>
+<!-- ===== PUBLICATIONS ===== -->
+<section id="publications">
+  <div class="container">
+    <h2 class="section-title">Publications</h2>
 
-<footer>
-  <a href="https://beian.miit.gov.cn/" target="_blank">浙ICP备20027526号-1</a>
+    <!-- HomeDiffusion -->
+    <div class="pub-card">
+      <div class="pub-thumbnail pub-thumb-1"></div>
+      <div>
+        <p class="pub-title">HomeDiffusion: Zero-shot Object Customization with Multi-view Representation Learning for Indoor Scenes</p>
+        <p class="pub-authors"><strong>Song Jin</strong>, et al.</p>
+        <p class="pub-venue">AAAI 2024</p>
+        <div class="pub-links">
+          <a href="#">Paper</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- SkeleGuide -->
+    <div class="pub-card">
+      <div class="pub-thumbnail pub-thumb-2"></div>
+      <div>
+        <p class="pub-title">SkeleGuide: Explicit Skeleton Reasoning for Context-Aware Human-in-Place Image Synthesis</p>
+        <p class="pub-authors"><strong>Song Jin</strong>, et al.</p>
+        <p class="pub-venue">Preprint, 2025</p>
+        <div class="pub-links">
+          <a href="#">Paper</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- SA-IQA -->
+    <div class="pub-card">
+      <div class="pub-thumbnail pub-thumb-3"></div>
+      <div>
+        <p class="pub-title">SA-IQA: Redefining Image Quality Assessment for Spatial Aesthetics with Multi-Dimensional Rewards</p>
+        <p class="pub-authors"><strong>Song Jin</strong>, et al.</p>
+        <p class="pub-venue">Preprint, 2025</p>
+        <div class="pub-links">
+          <a href="#">Paper</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3D Room Layout -->
+    <div class="pub-card">
+      <div class="pub-thumbnail pub-thumb-4"></div>
+      <div>
+        <p class="pub-title">3D Room Layout Reconstruction from a Single RGB Image</p>
+        <p class="pub-authors"><strong>Song Jin</strong>, et al.</p>
+        <p class="pub-venue">2022</p>
+        <div class="pub-links">
+          <a href="#">Paper</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROJECTS ===== -->
+<section id="projects">
+  <div class="container">
+    <h2 class="section-title">Projects</h2>
+
+    <div class="proj-card">
+      <div class="proj-thumbnail proj-thumb-1"></div>
+      <div>
+        <p class="proj-title">家作 &mdash; Home Decoration Image Generation</p>
+        <p class="proj-role">Algorithm Lead, 2023.3&ndash;Present &mdash; <a href="https://jiazuo.taobao.com/" target="_blank">jiazuo.taobao.com</a></p>
+        <p class="proj-desc">End-to-end AI image generation platform for home decoration scenes, covering studio photography (棚拍), AI model generation (模特), and suite-level commercialization (套图). Model evolution: SD+ControlNet &rarr; SDXL &rarr; Flux.</p>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-thumbnail proj-thumb-2"></div>
+      <div>
+        <p class="proj-title">放我家 &mdash; Virtual Home Staging</p>
+        <p class="proj-role">2022.3&ndash;2024</p>
+        <p class="proj-desc">AI-powered indoor scene editing pipeline integrating object removal (early adoption of SD inpainting), single-image 3D room layout reconstruction, and zero-shot object insertion with multi-view representation learning (HomeDiffusion).</p>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-thumbnail proj-thumb-3"></div>
+      <div>
+        <p class="proj-title">户型扫描 &mdash; Floor Plan Scanning &amp; Reconstruction</p>
+        <p class="proj-role">2021.5&ndash;2022.3</p>
+        <p class="proj-desc">Corner-based floor plan scanning and LiDAR-based 3D reconstruction for interior spaces.</p>
+        <div class="proj-links">
+          <a href="https://www.bilibili.com/video/BV1Yd4y1c7LC/?spm_id_from=333.999.0.0&vd_source=ed4f3132c9a321875f98a2936ddeea38" target="_blank">Video</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-thumbnail proj-thumb-4"></div>
+      <div>
+        <p class="proj-title">Stereo Camera Self-Calibration</p>
+        <p class="proj-role">2020 &mdash; HikVision</p>
+        <p class="proj-desc">On-chip stereo self-calibration without feature extraction. Achieved &lt;0.5px epipolar alignment error with ~30s processing on HiSi3559.</p>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-thumbnail proj-thumb-5"></div>
+      <div>
+        <p class="proj-title">Amphibious Robot VIO</p>
+        <p class="proj-role">2019 &mdash; HIT</p>
+        <p class="proj-desc">Visual-inertial localization for amphibious robots in field environments with adaptive viewing angle and exposure control.</p>
+        <div class="proj-links">
+          <a href="https://github.com/songjin321/amphibious_robot_ws" target="_blank">Code</a>
+          <a href="https://www.youtube.com/watch?v=EgoUhyrRRiA" target="_blank">Video</a>
+          <a href="assets/pdfs/amphiRobot.pdf">PDF</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-thumbnail proj-thumb-6"></div>
+      <div>
+        <p class="proj-title">MAV SLAM</p>
+        <p class="proj-role">2018 &mdash; HIT</p>
+        <p class="proj-desc">Autonomous state estimation and mapping for MAVs using onboard stereo cameras with EKF-based pose estimation and real-time 3D perception.</p>
+        <div class="proj-links">
+          <a href="https://github.com/songjin321/uav_navigation" target="_blank">Code</a>
+          <a href="assets/pdfs/mav.pdf">PDF</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EXPERIENCE ===== -->
+<section id="experience">
+  <div class="container">
+    <h2 class="section-title">Experience</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <p class="timeline-period">2024 &mdash; Present</p>
+        <p class="timeline-role">Staff Algorithm Engineer</p>
+        <p class="timeline-org">Alibaba Group</p>
+        <p class="timeline-org-cn">大淘宝技术</p>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-period">2021.2 &mdash; 2024</p>
+        <p class="timeline-role">Senior Algorithm Engineer</p>
+        <p class="timeline-org">Alibaba Group</p>
+        <p class="timeline-org-cn">大淘宝技术</p>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-period">2020.4 &mdash; 2021.2</p>
+        <p class="timeline-role">Algorithm Engineer</p>
+        <p class="timeline-org">HikVision Research Institute</p>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-period">2017.9 &mdash; 2020.1</p>
+        <p class="timeline-role">M.S. in Computer Science</p>
+        <p class="timeline-org">Harbin Institute of Technology</p>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-period">2013.9 &mdash; 2017.9</p>
+        <p class="timeline-role">B.S. in Computer Science</p>
+        <p class="timeline-org">Harbin Institute of Technology</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BLOG ===== -->
+<section id="blog">
+  <div class="container">
+    <h2 class="section-title">Blog</h2>
+    <p class="blog-placeholder">Coming soon.</p>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2025 Song Jin &nbsp;|&nbsp; <a href="https://beian.miit.gov.cn/" target="_blank">浙ICP备20027526号-1</a></p>
+  </div>
 </footer>
 
+<!-- ===== JS ===== -->
+<script>
+(function () {
+  // Nav toggle (mobile)
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', function () {
+    links.classList.toggle('open');
+    toggle.classList.toggle('active');
+  });
+
+  // Close menu on link click
+  links.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      links.classList.remove('open');
+      toggle.classList.remove('active');
+    });
+  });
+
+  // Scroll shadow on nav
+  var nav = document.getElementById('nav');
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 10) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  });
+})();
+</script>
+
+</body>
 </html>
